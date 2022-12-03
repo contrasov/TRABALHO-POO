@@ -1,9 +1,9 @@
 #include <iostream>
 #include <string>
+#include "classes/Reino.hpp"
 using namespace std; 
 
-
-int main(){
+void Menu(){
     int escolha;
     do{
         cout << "1. Exibir Reinos\n2. Cadastrar Animal\n0. Sair\n";
@@ -11,9 +11,9 @@ int main(){
         switch (escolha){
             case 0:
                 cout << "Saindo do programa...\n";
-                return 0;
+                return;
             case 1:
-                
+                cout << "Ainda nenhum Reino\n";
                 break;
             case 2:
                 cout << "Ainda em Desenvolvimento...\n";
@@ -21,5 +21,10 @@ int main(){
         }
     }
     while(escolha != 0);
-    
 }
+
+int main(){
+    Menu();
+}
+
+
