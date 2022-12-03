@@ -13,7 +13,7 @@ int main(){
                 cout << "Saindo do programa...\n";
                 return 0;
             case 1:
-                cout << "Ainda nenhum Reino\n";
+                
                 break;
             case 2:
                 cout << "Ainda em Desenvolvimento...\n";
