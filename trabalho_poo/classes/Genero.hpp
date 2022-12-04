@@ -1,7 +1,7 @@
 #include <string>
 using namespace std;
 
-class Reino {
+class Genero : public Familia {
 private:
 public:
 };
