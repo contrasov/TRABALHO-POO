@@ -1,9 +1,13 @@
 #include <string>
-using namespace std;
-#ifndef Animal_hpp
-#define Animal_hpp
+#include "classes/Especie.hpp"
 
-class Animal : public Especie {
+using namespace std;
+
+#ifndef ANIMAL_HPP
+#define ANIMAL_HPP
+
+class Animal : public Especie
+{
 public:
 private:
 };

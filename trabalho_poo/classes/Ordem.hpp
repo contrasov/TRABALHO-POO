@@ -1,7 +1,15 @@
 #include <string>
+#include "classes/Classe.hpp"
+
 using namespace std;
 
-class Ordem : public Classe {
+#ifndef ORDEM_CPP
+#define ORDEM_CPP
+
+class Ordem : public Classe
+{
 private:
 public:
 };
+
+#endif

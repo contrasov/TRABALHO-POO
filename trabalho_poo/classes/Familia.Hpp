@@ -1,7 +1,15 @@
 #include <string>
+#include "classes/Ordem.hpp"
+
 using namespace std;
 
-class Familia : public Ordem {
+#ifndef FAMILIA_HPP
+#define FAMILIA_HPP
+
+class Familia : public Ordem
+{
 private:
 public:
 };
+
+#endif

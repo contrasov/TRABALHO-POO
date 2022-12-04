@@ -1,7 +1,14 @@
 #include <string>
+
 using namespace std;
 
-class Reino {
+#ifndef REINO_HPP
+#define REINO_HPP
+
+class Reino
+{
 private:
 public:
 };
+
+#endif

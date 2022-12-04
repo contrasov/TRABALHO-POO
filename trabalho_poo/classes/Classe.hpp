@@ -1,7 +1,15 @@
 #include <string>
+#include "classes/Filo.hpp"
+
 using namespace std;
 
-class Classe : public Filo {
+#ifndef CLASSE_HPP
+#define CLASSE_HPP
+
+class Classe : public Filo
+{
 private:
 public:
 };
+
+#endif
