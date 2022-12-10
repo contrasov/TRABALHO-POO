@@ -5,20 +5,78 @@
 
 using namespace std;
 
-void Menu()
+
+
+void cadastro(){
+  //construtor aqui dentro pro usuario poder manipular, caso coloque no switch da erro
+    Animal_Planta x;
+    string reino;
+    string filo;
+    string classe;
+    string ordem;
+    string familia;
+    string genero;
+    string especie;
+    //Abre o arquivo
+    ofstream arq;
+    arq.open("Arquivo.txt",ios :: app);
+
+    cout << "Reino: ";
+    cin >> reino;
+
+    cout << "Filo: ";
+    cin >> filo;
+    cout << endl;
+
+    cout << "Classe: ";
+    cin >> classe;
+    cout << endl;
+     cout << "Ordem: ";
+    cin >> ordem;
+    cout << endl;
+     cout << "Familia: ";
+    cin >> familia;
+    cout << endl;
+     cout << "Gênero: ";
+    cin >> genero;
+    cout << endl;
+     cout << "Espécie: ";
+    cin >> especie;
+    cout << endl;
+
+    x.setNomeReino(reino);
+    x.setNomeFilo(filo);
+    x.setNomeClasse(classe);
+    x.setNomeOrdem(ordem);
+    x.setNomeFamilia(familia);
+    x.setNomeGenero(genero);
+    x.setNomeEspecie(especie);
+
+    //Coloca os dados dentro do arquivo (Ta sobrescrevendo não sei o porque)
+    arq << x <<"\n";
+    //Fecha o arquivo
+    arq.close();
+
+    //return reino, filo, classe, ordem, familia, genero, especie;
+
+}
+
+
+int main()
 {
-  // MUDANDO OS VALORES
+   // MUDANDO OS VALORES
   enum
   {
     CADASTRAR_ANIMAL = 1,
     CADASTRAR_PLANTA = 2,
+    MOSTRAR_ANIMAIS = 3,
     SAIR = 0
   };
   int escolha;
   do
   {
 
-    cout << "1. Cadastrar Animal \n2. Cadastrar planta \n0. Sair\n";
+    cout << "1. Cadastrar Animal \n2. Cadastrar planta \n3. mostrar\n0. Sair\n";
 
     cin >> escolha;
 
@@ -29,40 +87,28 @@ void Menu()
       break;
 
     case CADASTRAR_ANIMAL:
-      cout << "Ainda em Desenvolvimento...\n";
-      break;
+     cadastro();
+     
+
+     break;
+
+    case MOSTRAR_ANIMAIS:
+
+    break;
 
     case CADASTRAR_PLANTA:
       cout << "Ainda em Desenvolvimento...\n";
       break;
     }
   } while (escolha != 0);
-}
 
-int main()
-{
-  Animal_Planta x;
+  
 
-  x.setNomeReino("Animal");
-  x.setNomeFilo("Cordados");
-  x.setNomeClasse("Mamíferos");
-  x.setNomeOrdem("Artiodálitos");
-  x.setNomeFamilia("Bovídeos");
-  x.setNomeGenero("Bos");
-  x.setNomeEspecie("Gado bovino");
 
-  x.setExtincao(1);
-  x.setRegiao(4);
 
-  cout << x.getNomeReino() << "\n"
-       << x.getNomeFilo() << "\n"
-       << x.getNomeClasse() << "\n"
-       << x.getNomeOrdem() << "\n"
-       << x.getNomeFamilia() << "\n"
-       << x.getNomeGenero() << "\n"
-       << x.getNomeEspecie() << "\n";
 
-  // Menu();
+
+
 
   return 0;
 }

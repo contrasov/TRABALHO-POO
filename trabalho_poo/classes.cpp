@@ -1,22 +1,31 @@
 #include <string>
 #include <cstring>
 #include <iostream>
+#include <fstream>
 
 #include "classes.hpp"
 
 using namespace std;
 
-void Reino ::setNomeReino(string nomeReino)
+void Reino ::setNomeReino(string NomeReino)
 {
-    this->nomeReino = nomeReino;
+    this->nomeReino = NomeReino;
 }
 
 string Reino ::getNomeReino(void)
 {
     return nomeReino;
 }
+//Função da sobrecarga do operador << pra funcionar como um append lá em "arq << x" na main
+//Essa função é a definição do método friend pra sobrecarga de operador
+ostream& operator<<(ostream& os, const Reino& p)
+	{
+        //Estranho ainda de mexer e os dados sobrescrevem mas ta quase funcional
+		os << p.nomeReino;
+		return os;
+	}
 
-void Filo ::setNomeFilo(string nomeFilo)
+ void Filo ::setNomeFilo(string nomeFilo)
 {
     this->nomeFilo = nomeFilo;
 }
@@ -25,6 +34,14 @@ string Filo ::getNomeFilo(void)
 {
     return nomeFilo;
 }
+ostream& operator<<(ostream& os, const Filo& p)
+	{
+		// escrever cada membro
+		os << p.nomeFilo;
+		return os;
+	}
+
+
 
 void Classe ::setNomeClasse(string nomeClasse)
 {
@@ -36,6 +53,13 @@ string Classe ::getNomeClasse(void)
     return nomeClasse;
 }
 
+ostream& operator<<(ostream& os, const Classe& p)
+	{
+		// escrever cada membro
+		os << p.nomeClasse;
+		return os;
+	}
+
 void Ordem ::setNomeOrdem(string nomeOrdem)
 {
     this->nomeOrdem = nomeOrdem;
@@ -46,6 +70,13 @@ string Ordem ::getNomeOrdem(void)
     return nomeOrdem;
 }
 
+ostream& operator<<(ostream& os, const Ordem& p)
+	{
+		// escrever cada membro
+		os << p.nomeOrdem;
+		return os;
+	}
+
 void Familia ::setNomeFamilia(string nomeFamilia)
 {
     this->nomeFamilia = nomeFamilia;
@@ -55,6 +86,12 @@ string Familia ::getNomeFamilia(void)
 {
     return nomeFamilia;
 }
+ostream& operator<<(ostream& os, const Familia& p)
+	{
+		// escrever cada membro
+		os << p.nomeFamilia;
+		return os;
+	}
 
 void Genero ::setNomeGenero(string nomeGenero)
 {
@@ -66,6 +103,13 @@ string Genero ::getNomeGenero(void)
     return nomeGenero;
 }
 
+ostream& operator<<(ostream& os, const Genero& p)
+	{
+		// escrever cada membro
+		os << p.nomeGenero;
+		return os;
+	}
+
 void Especie ::setNomeEspecie(string nomeEspecie)
 {
     this->nomeEspecie = nomeEspecie;
@@ -75,6 +119,13 @@ string Especie ::getNomeEspecie(void)
 {
     return nomeEspecie;
 }
+
+ostream& operator<<(ostream& os, const Especie& p)
+	{
+		// escrever cada membro
+		os << p.nomeEspecie;
+		return os;
+	}
 
 void Animal_Planta ::setExtincao(bool extincao)
 {
@@ -125,3 +176,4 @@ int Animal_Planta ::getRegiao(void)
 {
     return regiao;
 }
+
