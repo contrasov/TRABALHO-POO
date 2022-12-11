@@ -17,9 +17,10 @@ void cadastro(){
     string familia;
     string genero;
     string especie;
+    int region;
     //Abre o arquivo
     ofstream arq;
-    arq.open("Arquivo.txt",ios :: app);
+    arq.open("Arquivo.txt",fstream :: app);
 
     cout << "Reino: ";
     cin >> reino;
@@ -52,8 +53,19 @@ void cadastro(){
     x.setNomeGenero(genero);
     x.setNomeEspecie(especie);
 
-    //Coloca os dados dentro do arquivo (Ta sobrescrevendo não sei o porque)
-    arq << x <<"\n";
+    //Coloca os dados dentro do arquivo (Ta sobrescrevendo não sei o porque) RESOLVIDO!
+    arq << "Especie Registrada: " << x.getNomeEspecie() << "\n";
+    arq << "Reino: "<< x.getNomeReino() <<"\n";
+    arq << "Filo: " << x.getNomeFilo() <<"\n";
+    arq << "Classe: " << x.getNomeClasse() <<"\n";
+    arq << "Ordem: " << x.getNomeOrdem() <<"\n";
+    arq << "Familia: " << x.getNomeFamilia() <<"\n";
+    arq << "Genero: " << x.getNomeGenero() <<"\n";
+    arq << "Especie: " << x.getNomeEspecie() <<"\n";
+    arq << "\n\n";
+
+    
+
     //Fecha o arquivo
     arq.close();
 
